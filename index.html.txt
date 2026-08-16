@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Edita Andrijasevic — before your appraisal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EAE9E6;
+    --panel:#FFFFFF;
+    --panel-border:#DEDCD6;
+    --charcoal:#232320;
+    --charcoal-2:#33332F;
+    --gold:#B8901F;
+    --gold-light:#D8B94C;
+    --white:#FFFFFF;
+    --ink:#232320;
+    --ink-soft:#5B5A53;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    min-height:100vh;
+  }
+  .wrap{max-width:460px;margin:0 auto;padding:40px 20px 60px;}
+
+  .profile{
+    text-align:center;margin-bottom:26px;
+    background:var(--charcoal);
+    padding:34px 24px 28px;
+    border:1px solid var(--charcoal-2);
+  }
+  .avatar-frame{
+    width:104px;height:104px;border-radius:50%;
+    overflow:hidden;margin:0 auto 18px;
+    border:2px solid var(--gold);
+    box-shadow:0 0 0 6px rgba(184,144,31,0.16);
+  }
+  .avatar-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+  .profile h1{
+    font-family:'Fraunces',serif;font-weight:500;font-size:26px;
+    margin:0 0 6px;color:var(--white);
+  }
+  .profile .role{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--gold-light);margin-bottom:12px;
+  }
+  .profile .note{
+    font-family:'Fraunces',serif;font-style:italic;font-size:16px;
+    color:rgba(255,255,255,0.82);line-height:1.5;max-width:340px;margin:0 auto;
+  }
+
+  .hero-stats{
+    display:flex;justify-content:center;gap:22px;margin:22px 0 4px;
+  }
+  .hero-stat{text-align:center;}
+  .hero-stat .n{font-family:'Fraunces',serif;font-weight:600;font-size:21px;color:var(--gold-light);}
+  .hero-stat .l{font-family:'IBM Plex Mono',monospace;font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-top:2px;}
+  .hero-div{width:1px;background:rgba(255,255,255,0.18);}
+
+  .tabs{display:flex;flex-direction:column;gap:12px;margin-top:22px;}
+
+  .tab-btn{
+    display:flex;align-items:center;gap:14px;
+    width:100%;text-align:left;
+    background:var(--panel);
+    border:1px solid var(--panel-border);
+    color:var(--ink);
+    padding:16px 18px;
+    font-family:'Inter',sans-serif;font-size:15px;font-weight:500;
+    cursor:pointer;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .tab-btn:hover{border-color:var(--gold);}
+  .tab-btn .icon{
+    font-family:'Fraunces',serif;font-weight:600;font-size:15px;
+    width:30px;height:30px;min-width:30px;
+    display:flex;align-items:center;justify-content:center;
+    background:rgba(184,144,31,0.14);color:var(--gold);
+    border-radius:50%;
+  }
+  .tab-btn .label{flex:1;}
+  .tab-btn .sub{
+    display:block;font-family:'Inter',sans-serif;font-weight:400;font-size:11.5px;
+    color:var(--ink-soft);margin-top:2px;
+  }
+  .tab-btn .chev{
+    font-size:12px;color:rgba(35,35,32,0.35);
+    transition:transform .25s ease;
+  }
+  .tab-btn.open .chev{transform:rotate(180deg);}
+  .tab-btn.open{border-color:var(--gold);}
+
+  .tab-panel{
+    max-height:0;overflow:hidden;
+    background:#F6F5F2;color:var(--ink);
+    transition:max-height .4s ease;
+    margin-top:-10px;
+    border-left:1px solid var(--panel-border);
+    border-right:1px solid var(--panel-border);
+  }
+  .tab-panel-inner{padding:24px 22px 26px;}
+  .tab-panel p{font-size:14.5px;line-height:1.75;color:var(--ink-soft);margin:0 0 13px;}
+  .tab-panel p:last-child{margin-bottom:0;}
+
+  .ledger-row{display:flex;align-items:baseline;gap:14px;padding:10px 0;}
+  .ledger-row:not(:last-child){border-bottom:1px solid var(--panel-border);}
+  .ledger-num{font-family:'Fraunces',serif;font-weight:600;font-size:24px;color:var(--gold);min-width:76px;}
+  .ledger-desc{font-size:14px;color:var(--ink-soft);line-height:1.4;}
+  .ledger-desc b{color:var(--ink);}
+
+  .pull-quote{
+    font-family:'Fraunces',serif;font-style:italic;font-weight:500;font-size:18px;
+    color:var(--gold);line-height:1.4;margin:0 0 14px;
+  }
+
+  .quote{
+    font-family:'Fraunces',serif;font-style:italic;font-size:16px;
+    line-height:1.6;color:var(--ink);margin:0 0 10px;
+  }
+  .quote-attr{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:rgba(35,35,32,0.5);}
+  .rating-row{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:13px;color:var(--ink-soft);}
+  .stars{color:var(--gold);font-size:14px;letter-spacing:1px;}
+
+  .step{display:flex;gap:12px;padding:12px 0;}
+  .step:not(:last-child){border-bottom:1px solid var(--panel-border);}
+  .step-num{font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--gold);min-width:20px;}
+  .step h4{font-family:'Fraunces',serif;font-weight:500;font-size:14.5px;margin:0 0 4px;color:var(--ink);}
+  .step p{margin:0;font-size:13.5px;}
+
+  .badge-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+  .badge{
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.03em;
+    background:rgba(184,144,31,0.1);color:var(--gold);
+    padding:6px 10px;border:1px solid rgba(184,144,31,0.3);
+  }
+
+  .cred-row{display:flex;justify-content:space-between;gap:12px;padding:8px 0;font-size:13px;border-bottom:1px solid var(--panel-border);}
+  .cred-row:last-child{border-bottom:none;}
+  .cred-label{color:rgba(35,35,32,0.55);}
+  .cred-value{color:var(--ink);text-align:right;}
+
+  .link-btn{
+    display:flex;align-items:center;gap:14px;
+    background:var(--gold);color:var(--white);
+    padding:16px 18px;text-decoration:none;
+    font-weight:600;font-size:15px;
+  }
+  .link-btn .icon{background:rgba(255,255,255,0.22);color:var(--white);}
+  .link-btn .sub{display:block;color:rgba(255,255,255,0.8);margin-top:4px;}
+
+  footer{
+    text-align:center;margin-top:38px;
+    font-family:'IBM Plex Mono',monospace;font-size:10.5px;
+    color:rgba(35,35,32,0.4);letter-spacing:.03em;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="profile">
+    <div class="avatar-frame">
+      <img src="https://peterandedita.co.nz/images/edita-andrijasevic-helping-homeowners-sell-with-confidence-960.webp" alt="Edita Andrijasevic">
+    </div>
+    <h1>Edita Andrijasevic</h1>
+    <div class="role">West Auckland Property Specialist · Raine &amp; Horne</div>
+    <p class="note">You've asked about an appraisal — before I visit your home, here's what 15 years of doing this has taught me about selling your home well.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="n">15+</div><div class="l">Years Local</div></div>
+      <div class="hero-div"></div>
+      <div class="hero-stat"><div class="n">187</div><div class="l">Homes Sold</div></div>
+      <div class="hero-div"></div>
+      <div class="hero-stat"><div class="n">28</div><div class="l">Avg. Days</div></div>
+      <div class="hero-div"></div>
+      <div class="hero-stat"><div class="n">5.0</div><div class="l">★ 49 Reviews</div></div>
+    </div>
+  </div>
+
+  <div class="tabs">
+
+    <div>
+      <button class="tab-btn" data-target="p1"><span class="icon">1</span><span class="label">Meet Edita<span class="sub">15+ years, one suburb at a time</span></span><span class="chev">▾</span></button>
+      <div class="tab-panel" id="p1"><div class="tab-panel-inner">
+        <p class="pull-quote">"I don't sell houses in general — I sell homes in West Auckland, and I've done it long enough to know what actually moves buyers here."</p>
+        <p>I've spent over 15 years working these streets — Titirangi, Blockhouse Bay, Lynfield, New Lynn, Green Bay, Glen Eden, Kelston, Mount Roskill, New Windsor, Glendene and Avondale. Not a general patch on a map — the specific streets, school zones, and buyer types that decide what a home in <b>your</b> suburb is really worth.</p>
+        <p>For most of that time I've worked alongside my husband and business partner Peter. Long enough that locals still call us <b>"the A-Team"</b> — a nickname that stuck because of how we work, not a slogan we invented. These days that same hands-on partnership operates under the Raine &amp; Horne name, backed by a national network but run with the attention of two people who actually know your street.</p>
+        <p>What that means for you: no handoff to a junior agent once the sign goes up, no generic script. You get me, from the first walk-through to the final signature.</p>
+      </div></div>
+    </div>
+
+    <div>
+      <button class="tab-btn" data-target="p2"><span class="icon">2</span><span class="label">Track record<span class="sub">The numbers behind the promise</span></span><span class="chev">▾</span></button>
+      <div class="tab-panel" id="p2"><div class="tab-panel-inner">
+        <p>Anyone can promise a great result. Here's what I've actually delivered for West Auckland sellers so far:</p>
+        <div class="ledger-row"><span class="ledger-num">187</span><span class="ledger-desc"><b>Properties sold</b> across West Auckland — real families, real settlements, not just listings taken on</span></div>
+        <div class="ledger-row"><span class="ledger-num">28 days</span><span class="ledger-desc"><b>Average time on market</b> — well ahead of a stale, sat-on listing, because presentation and pricing are right from day one</span></div>
+        <div class="ledger-row"><span class="ledger-num">15+ yrs</span><span class="ledger-desc"><b>Local experience</b> that means I'm not learning your suburb's market on your listing</span></div>
+        <div class="ledger-row"><span class="ledger-num">5.0★</span><span class="ledger-desc"><b>Average rating</b> across 49 Google reviews, from sellers who've been exactly where you are now</span></div>
+      </div></div>
+    </div>
+
+    <div>
+      <button class="tab-btn" data-target="p3"><span class="icon">3</span><span class="label">How I market your home<span class="sub">Beyond a sign on the lawn</span></span><span class="chev">▾</span></button>
+      <div class="tab-panel" id="p3"><div class="tab-panel-inner">
+        <p>A great result starts long before an open home. Every listing I take on is backed by Raine &amp; Horne's <a href="https://peterandedita.co.nz/amplify-property-marketing/" style="color:var(--gold);font-weight:600;text-decoration:underline;">Amplify</a> marketing platform — giving your property AI-powered exposure across New Zealand's major property portals and social channels, engineered to put your home in front of the buyers most likely to act, not just the most eyeballs.</p>
+        <p>On top of that national reach, you get the local part only I can offer: knowing which buyers are already circling your specific street, and pricing and presenting your home so it's competitive from the very first weekend — which is exactly why my average time on market sits at 28 days.</p>
+        <div class="badge-row">
+          <span class="badge">Amplify AI marketing</span>
+          <span class="badge">Major NZ property portals</span>
+          <span class="badge">Local buyer network</span>
+        </div>
+      </div></div>
+    </div>
+
+    <div>
+      <button class="tab-btn" data-target="p4"><span class="icon">4</span><span class="label">What sellers say<span class="sub">In their own words</span></span><span class="chev">▾</span></button>
+      <div class="tab-panel" id="p4"><div class="tab-panel-inner">
+        <p class="quote">"One seller was thrilled to sell at auction, praising Edita and Peter's marketing for drawing buyers who competed for the home — and delivering a fantastic price in under three weeks."</p>
+        <p class="quote-attr">Paraphrased from a published client review</p>
+        <div class="rating-row"><span class="stars">★★★★★</span><span>5.0 rating from 49 Google reviews</span></div>
+      </div></div>
+    </div>
+
+    <div>
+      <button class="tab-btn" data-target="p5"><span class="icon">5</span><span class="label">What to expect when I visit<span class="sub">No surprises, no pressure</span></span><span class="chev">▾</span></button>
+      <div class="tab-panel" id="p5"><div class="tab-panel-inner">
+        <div class="step"><span class="step-num">1</span><div><h4>An unhurried walk-through</h4><p>I look properly — layout, presentation, condition, land — not a five-minute once-over. This is the same care that keeps my average days-on-market at 28.</p></div></div>
+        <div class="step"><span class="step-num">2</span><div><h4>Straight talk on value</h4><p>A number grounded in real, recent local sales and current buyer competition on your street — not an inflated figure designed to win the listing and disappoint you later.</p></div></div>
+        <div class="step"><span class="step-num">3</span><div><h4>A plan, not a pitch</h4><p>Clear options on timing, presentation and marketing, explained in plain language — with zero pressure to sign anything on the spot.</p></div></div>
+      </div></div>
+    </div>
+
+    <div>
+      <button class="tab-btn" data-target="p6"><span class="icon">6</span><span class="label">Credentials &amp; backing<span class="sub">Who's actually behind this</span></span><span class="chev">▾</span></button>
+      <div class="tab-panel" id="p6"><div class="tab-panel-inner">
+        <div class="cred-row"><span class="cred-label">Licence</span><span class="cred-value">Licensed Agent, REAA 2008 · 20027060</span></div>
+        <div class="cred-row"><span class="cred-label">Brokerage</span><span class="cred-value">Raine &amp; Horne</span></div>
+        <div class="cred-row"><span class="cred-label">Office</span><span class="cred-value">9 Sheridan Drive, New Lynn</span></div>
+        <div class="cred-row"><span class="cred-label">Serving</span><span class="cred-value">Central and West Auckland</span></div>
+      </div></div>
+    </div>
+
+    <a class="link-btn" href="tel:+6421765234"><span class="icon">☎</span><span class="label">Call&nbsp;&nbsp;021 765 234<span class="sub">Direct line, no call centre</span></span></a>
+    <a class="link-btn" href="mailto:edita.andrijasevic@blockhousebay.rh.co.nz"><span class="icon">✉</span><span class="label">Email<span class="sub">edita.andrijasevic@blockhousebay.rh.co.nz</span></span></a>
+
+  </div>
+
+  <footer>Raine &amp; Horne West Auckland · peterandedita.co.nz</footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.tab-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var panel = document.getElementById(btn.dataset.target);
+      var isOpen = btn.classList.contains('open');
+      document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('open'); });
+      document.querySelectorAll('.tab-panel').forEach(function(p){ p.style.maxHeight = null; });
+      if(!isOpen){
+        btn.classList.add('open');
+        panel.style.maxHeight = panel.scrollHeight + 'px';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>

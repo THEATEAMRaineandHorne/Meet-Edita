@@ -130,6 +130,19 @@
   .rating-row{display:flex;align-items:center;gap:8px;margin-top:14px;font-size:13px;color:var(--ink-soft);}
   .stars{color:var(--gold);font-size:14px;letter-spacing:1px;}
 
+  .review-card{padding:16px 0;}
+  .review-card:not(:last-child){border-bottom:1px solid var(--panel-border);}
+  .review-card .stars{display:block;margin-bottom:8px;}
+  .review-card p{font-size:14px;line-height:1.65;color:var(--ink-soft);margin:0 0 8px;}
+  .review-card .attr{font-family:'IBM Plex Mono',monospace;font-size:10.5px;letter-spacing:.04em;text-transform:uppercase;color:rgba(35,35,32,0.45);}
+  .gbp-link{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    margin-top:18px;padding:13px 16px;
+    background:#F6F5F2;border:1px solid var(--panel-border);
+    text-decoration:none;color:var(--ink);font-weight:600;font-size:13.5px;
+  }
+  .gbp-link:hover{border-color:var(--gold);}
+
   .step{display:flex;gap:12px;padding:12px 0;}
   .step:not(:last-child){border-bottom:1px solid var(--panel-border);}
   .step-num{font-family:'Fraunces',serif;font-weight:600;font-size:16px;color:var(--gold);min-width:20px;}
@@ -225,9 +238,39 @@
     <div>
       <button class="tab-btn" data-target="p4"><span class="icon">4</span><span class="label">What sellers say<span class="sub">In their own words</span></span><span class="chev">▾</span></button>
       <div class="tab-panel" id="p4"><div class="tab-panel-inner">
-        <p class="quote">"One seller was thrilled to sell at auction, praising Edita and Peter's marketing for drawing buyers who competed for the home — and delivering a fantastic price in under three weeks."</p>
-        <p class="quote-attr">Paraphrased from a published client review</p>
-        <div class="rating-row"><span class="stars">★★★★★</span><span>5.0 rating from 49 Google reviews</span></div>
+
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>Compared several agents before choosing Edita and Peter, known locally as the A-Team. The campaign was smooth with regular updates on open homes and buyer interest, and the home sold within eight weeks.</p>
+          <span class="attr">— Roy &amp; Marilyn</span>
+        </div>
+
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>Felt in good hands from the first meeting — professional, kept fully in the loop, and went above and beyond through private showings and midweek open homes while selling a family home of 58 years.</p>
+          <span class="attr">— Christine Banks</span>
+        </div>
+
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>Chosen to sell a late parents' estate for their enthusiasm and prompt communication. One property sold by auction, one by tender, with results the family felt ran against a cooling market.</p>
+          <span class="attr">— Peter H., on behalf of the H. family</span>
+        </div>
+
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>Thrilled to sell at auction, praising marketing that drew buyers who competed for the home — and delivered a fantastic price in under three weeks.</p>
+          <span class="attr">— Published seller review</span>
+        </div>
+
+        <div class="review-card">
+          <span class="stars">★★★★★</span>
+          <p>Described as approachable, calm and knowledgeable — going the extra mile from the first walk-through, through presentation advice, to "sealing the deal in record time with an amazing offer."</p>
+          <span class="attr">— Verified client review</span>
+        </div>
+
+        <a class="gbp-link" href="https://share.google/dGqdfyV9V1Gsnr6cr" target="_blank" rel="noopener">★ 5.0 · See all 49 reviews on Google →</a>
+
       </div></div>
     </div>
 
